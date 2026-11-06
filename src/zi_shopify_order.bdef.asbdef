@@ -1,0 +1,64 @@
+managed implementation in class zbp_i_shopify_order unique;
+strict ( 2 );
+
+define behavior for ZI_SHOPIFY_ORDER alias ShopifyOrder
+persistent table zshopify_order
+lock master
+authorization master ( global )
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) Uuid;
+  field ( mandatory : create )            ShopifyOrderId;
+  field ( readonly : update )             ShopifyOrderId;
+
+  mapping for zshopify_order
+  {
+    Uuid                   = uuid;
+    ShopifyOrderId         = id;
+    CreatedAt              = created_at;
+    CancelReason           = cancel_reason;
+    CancelledAt            = cancelled_at;
+    UpdatedDate            = updated_date;
+    UpdatedTime            = updated_time;
+    ConfirmationNumber     = confirmation_number;
+    CurrentSubtotalPrice   = current_subtotal_price;
+    CurrentTotalDiscounts  = current_total_discounts;
+    CurrentTotalTax        = current_total_tax;
+    OrderNumber            = order_number;
+    Tags                   = tags;
+    TaxLineTitle           = tax_line_title;
+    TotalLineItemsPrice    = total_line_items_price;
+    TotalShippingAmount    = total_shipping_amount;
+    BillingAddress1        = billing_address1;
+    BillingPhone           = billing_phone;
+    BillingCity            = billing_city;
+    BillingZip             = billing_zip;
+    BillingName            = billing_name;
+    BillingCountryCode     = billing_country_code;
+    BillingProvinceCode    = billing_province_code;
+    CustomerEmail          = customer_email;
+    CustomerPhone          = customer_phone;
+    CustDefAddress1        = cust_def_address1;
+    CustDefCity            = cust_def_city;
+    CustDefZip             = cust_def_zip;
+    CustDefPhone           = cust_def_phone;
+    CustDefName            = cust_def_name;
+    CustDefProvinceCode    = cust_def_province_code;
+    CustDefCountryCode     = cust_def_country_code;
+    LineItemId             = line_item_id;
+    LineItemQuantity       = line_item_quantity;
+    LineItemFulfillableQty = line_item_fulfillable_qty;
+    ProductId              = product_id;
+    Sku                    = sku;
+    ShippingAddress1       = shipping_address1;
+    ShippingPhone          = shipping_phone;
+    ShippingCity           = shipping_city;
+    ShippingZip            = shipping_zip;
+    ShippingName           = shipping_name;
+    ShippingCountryCode    = shipping_country_code;
+    ShippingProvinceCode   = shipping_province_code;
+  }
+}

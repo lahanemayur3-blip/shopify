@@ -1,0 +1,4 @@
+@EndUserText.label: 'Shopify Order Service'
+define service ZSD_SHOPIFY_ORDER {
+  expose ZC_SHOPIFY_ORDER as ShopifyOrder;
+}

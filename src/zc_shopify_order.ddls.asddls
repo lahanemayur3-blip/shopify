@@ -1,0 +1,52 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Shopify Order - Projection View'
+@Metadata.allowExtensions: true
+define root view entity ZC_SHOPIFY_ORDER
+  provider contract transactional_query
+  as projection on ZI_SHOPIFY_ORDER
+{
+  key Uuid,
+  ShopifyOrderId,
+  CreatedAt,
+  CancelReason,
+  CancelledAt,
+  UpdatedDate,
+  UpdatedTime,
+  ConfirmationNumber,
+  CurrentSubtotalPrice,
+  CurrentTotalDiscounts,
+  CurrentTotalTax,
+  OrderNumber,
+  Tags,
+  TaxLineTitle,
+  TotalLineItemsPrice,
+  TotalShippingAmount,
+  BillingAddress1,
+  BillingPhone,
+  BillingCity,
+  BillingZip,
+  BillingName,
+  BillingCountryCode,
+  BillingProvinceCode,
+  CustomerEmail,
+  CustomerPhone,
+  CustDefAddress1,
+  CustDefCity,
+  CustDefZip,
+  CustDefPhone,
+  CustDefName,
+  CustDefProvinceCode,
+  CustDefCountryCode,
+  LineItemId,
+  LineItemQuantity,
+  LineItemFulfillableQty,
+  ProductId,
+  Sku,
+  ShippingAddress1,
+  ShippingPhone,
+  ShippingCity,
+  ShippingZip,
+  ShippingName,
+  ShippingCountryCode,
+  ShippingProvinceCode
+}
